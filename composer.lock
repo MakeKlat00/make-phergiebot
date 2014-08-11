@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "12d9db6d2f3d1b89e89a4e7b830837df",
+    "hash": "afb1f374dd3eb218c85f692ea3ed1cf5",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -1368,13 +1368,13 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
+        "vlucas/phpdotenv": 20,
         "phergie/phergie-irc-bot-react": 20,
         "phergie/phergie-irc-plugin-react-pong": 20,
         "phergie/phergie-irc-plugin-react-commandhelp": 20,
         "phergie/phergie-irc-plugin-react-usermode": 20,
         "phergie/phergie-irc-plugin-react-nickserv": 20,
-        "phergie/phergie-irc-plugin-react-youtube": 20,
-        "vlucas/phpdotenv": 20
+        "phergie/phergie-irc-plugin-react-youtube": 20
     },
     "prefer-stable": false,
     "platform": [

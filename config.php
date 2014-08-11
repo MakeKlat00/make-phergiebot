@@ -17,16 +17,24 @@ return [
   // Plugins to include for all connections
 
   'plugins' => array_merge([
+    // dependencies
+    new \WyriHaximus\Phergie\Plugin\Dns\Plugin,
+    new \WyriHaximus\Phergie\Plugin\Http\Plugin,
+    new \WyriHaximus\Phergie\Plugin\Url\Plugin,
+    $usermodePlugin,
+
+    // runtime essentials
     new \Phergie\Irc\Plugin\React\Pong\Plugin,
     new \Phergie\Irc\Plugin\React\AutoJoin\Plugin(['channels' => getenv('IRC_CHANS')]),
-    $usermodePlugin,
-    getenv('NICKSERV_PASS') ? new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS')]) : null,
+    new \Phergie\Irc\Plugin\React\Quit\Plugin(['message' => 'because %s said so']),
+    new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS') ?: '']),
 
+    // commands
     new \Phergie\Irc\Plugin\React\Command\Plugin(['prefix' => '.']),
     new \Phergie\Irc\Plugin\React\CommandHelp\Plugin([
       'plugins'  => $plugins,
     ]),
-    new \Phergie\Irc\Plugin\React\Quit\Plugin(['message' => 'because %s said so']),
+    new \Phergie\Irc\Plugin\React\YouTube\Plugin(array('key' => getenv('GOOGLE_APIKEY') ?: '')),
   ], $plugins),
 
   'connections' => [
