@@ -13,6 +13,8 @@
         "phergie/phergie-irc-plugin-react-command": "1.0.*",
         "phergie/phergie-irc-plugin-react-usermode": "dev-master",
         "phergie/phergie-irc-plugin-react-quit": "1.0.*",
-        "phergie/phergie-irc-plugin-react-nickserv": "dev-master"
+        "phergie/phergie-irc-plugin-react-nickserv": "dev-master",
+        "phergie/phergie-irc-plugin-react-youtube": "dev-master",
+        "vlucas/phpdotenv": "dev-master"
     }
 }

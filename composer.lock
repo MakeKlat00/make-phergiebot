@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "34790a6b48bd15ed97033dbfbfcc24e4",
+    "hash": "12d9db6d2f3d1b89e89a4e7b830837df",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -50,6 +50,50 @@
                 "event-dispatcher"
             ],
             "time": "2012-12-29 17:04:52"
+        },
+        {
+            "name": "guzzle/parser",
+            "version": "v3.9.2",
+            "target-dir": "Guzzle/Parser",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/parser.git",
+                "reference": "6874d171318a8e93eb6d224cf85e4678490b625c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/parser/zipball/6874d171318a8e93eb6d224cf85e4678490b625c",
+                "reference": "6874d171318a8e93eb6d224cf85e4678490b625c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle\\Parser": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Interchangeable parsers used by Guzzle",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "URI Template",
+                "cookie",
+                "http",
+                "message",
+                "url"
+            ],
+            "time": "2014-02-05 18:29:46"
         },
         {
             "name": "monolog/monolog",
@@ -112,6 +156,70 @@
                 "psr-3"
             ],
             "time": "2013-07-28 22:38:30"
+        },
+        {
+            "name": "nojimage/twitter-text-php",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nojimage/twitter-text-php.git",
+                "reference": "2cf4d681f7cbe0a564fb8f32c423b35b85baae20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nojimage/twitter-text-php/zipball/2cf4d681f7cbe0a564fb8f32c423b35b85baae20",
+                "reference": "2cf4d681f7cbe0a564fb8f32c423b35b85baae20",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.8"
+            },
+            "require-dev": {
+                "php": ">=5.3.3",
+                "symfony/yaml": "*",
+                "twitter/twitter-text-conformance": "1.8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Twitter_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Nojima",
+                    "homepage": "http://php-tips.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Matt Sanford",
+                    "email": "matt@mzsanford.com",
+                    "homepage": "http://mzsanford.com"
+                },
+                {
+                    "name": "Mike Cochrane",
+                    "email": "mikec@mikenz.geek.nz",
+                    "homepage": "http://mikenz.geek.nz"
+                },
+                {
+                    "name": "Nick Pope",
+                    "email": "git@nickpope.me.uk",
+                    "homepage": "http://www.nickpope.me.uk"
+                }
+            ],
+            "description": "A library of PHP classes that provide auto-linking and extraction of usernames, lists, hashtags and URLs from tweets.",
+            "homepage": "https://github.com/nojimage/twitter-text-php",
+            "keywords": [
+                "autolink",
+                "extract",
+                "text",
+                "twitter"
+            ],
+            "time": "2014-02-28 15:18:45"
         },
         {
             "name": "phergie/phergie-irc-bot-react",
@@ -647,6 +755,48 @@
             "time": "2014-07-09 03:24:49"
         },
         {
+            "name": "phergie/phergie-irc-plugin-react-youtube",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phergie/phergie-irc-plugin-react-youtube.git",
+                "reference": "9793506c8438851694d153ced101687c07fd0a01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-plugin-react-youtube/zipball/9793506c8438851694d153ced101687c07fd0a01",
+                "reference": "9793506c8438851694d153ced101687c07fd0a01",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "phergie/phergie-irc-bot-react": "dev-master",
+                "wyrihaximus/phergie-url": "dev-master"
+            },
+            "require-dev": {
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phergie\\Irc\\Plugin\\React\\YouTube\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Phergie plugin for providing information about YouTube videos",
+            "keywords": [
+                "bot",
+                "irc",
+                "phergie",
+                "plugin"
+            ],
+            "time": "2014-07-09 03:24:50"
+        },
+        {
             "name": "psr/log",
             "version": "dev-master",
             "source": {
@@ -731,7 +881,7 @@
         },
         {
             "name": "react/dns",
-            "version": "0.3.x-dev",
+            "version": "v0.3.2",
             "target-dir": "React/Dns",
             "source": {
                 "type": "git",
@@ -814,6 +964,48 @@
                 "event-loop"
             ],
             "time": "2013-07-21 02:23:09"
+        },
+        {
+            "name": "react/http-client",
+            "version": "0.3.x-dev",
+            "target-dir": "React/HttpClient",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/http-client.git",
+                "reference": "77f96040ea78d625b036e0ac2b2ac56a222caa3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/http-client/zipball/77f96040ea78d625b036e0ac2b2ac56a222caa3e",
+                "reference": "77f96040ea78d625b036e0ac2b2ac56a222caa3e",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/parser": "~2.8|~3.0",
+                "php": ">=5.3.3",
+                "react/dns": "0.3.*",
+                "react/socket-client": "0.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\HttpClient": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Asynchronous HTTP client library.",
+            "keywords": [
+                "http"
+            ],
+            "time": "2014-06-08 16:29:44"
         },
         {
             "name": "react/promise",
@@ -901,6 +1093,48 @@
             "time": "2014-02-17 22:32:00"
         },
         {
+            "name": "react/socket-client",
+            "version": "0.3.x-dev",
+            "target-dir": "React/SocketClient",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/socket-client.git",
+                "reference": "87935a0223362c36cd30cf215cbec33377d31ca4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/socket-client/zipball/87935a0223362c36cd30cf215cbec33377d31ca4",
+                "reference": "87935a0223362c36cd30cf215cbec33377d31ca4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "react/dns": "0.3.*",
+                "react/event-loop": "0.3.*",
+                "react/promise": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\SocketClient": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async connector to open TCP/IP and SSL/TLS based connections.",
+            "keywords": [
+                "Socket"
+            ],
+            "time": "2013-04-20 14:55:59"
+        },
+        {
             "name": "react/stream",
             "version": "0.3.x-dev",
             "target-dir": "React/Stream",
@@ -944,6 +1178,186 @@
                 "stream"
             ],
             "time": "2014-02-16 19:48:52"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "a6d7d9778975100460a24395f8b5175024e14a54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/a6d7d9778975100460a24395f8b5175024e14a54",
+                "reference": "a6d7d9778975100460a24395f8b5175024e14a54",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dotenv": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2014-04-04 15:06:45"
+        },
+        {
+            "name": "wyrihaximus/phergie-dns",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/PhergieDns.git",
+                "reference": "544d088c23d8089d806762050883bf8aac3c5e99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/PhergieDns/zipball/544d088c23d8089d806762050883bf8aac3c5e99",
+                "reference": "544d088c23d8089d806762050883bf8aac3c5e99",
+                "shasum": ""
+            },
+            "require": {
+                "phergie/phergie-irc-bot-react": "dev-master",
+                "react/dns": "0.3.2"
+            },
+            "require-dev": {
+                "phake/phake": "1.0.*",
+                "phergie/phergie-irc-plugin-react-command": "1.0.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "suggest": {
+                "phergie/phergie-irc-plugin-react-command": "1.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Phergie\\Plugin\\Dns\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Phergie plugin for Looking up IP's by hostnames",
+            "keywords": [
+                "bot",
+                "irc",
+                "phergie",
+                "phergieplugin",
+                "plugin",
+                "react"
+            ],
+            "time": "2014-06-24 19:38:24"
+        },
+        {
+            "name": "wyrihaximus/phergie-http",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/PhergieHttp.git",
+                "reference": "83ca5f1e7f840d03a416debffb3f28ef50858391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/PhergieHttp/zipball/83ca5f1e7f840d03a416debffb3f28ef50858391",
+                "reference": "83ca5f1e7f840d03a416debffb3f28ef50858391",
+                "shasum": ""
+            },
+            "require": {
+                "phergie/phergie-irc-bot-react": "dev-master",
+                "react/http-client": "0.3.*",
+                "wyrihaximus/phergie-dns": "~1.0"
+            },
+            "require-dev": {
+                "phake/phake": "1.0.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Phergie\\Plugin\\Http\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Phergie plugin for Provide HTTP functionality to other plugins",
+            "keywords": [
+                "bot",
+                "irc",
+                "phergie",
+                "phergieplugin",
+                "plugin",
+                "react"
+            ],
+            "time": "2014-06-25 18:20:03"
+        },
+        {
+            "name": "wyrihaximus/phergie-url",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/PhergieUrl.git",
+                "reference": "8dd903b4196b8b5f257afd131398af927d005519"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/PhergieUrl/zipball/8dd903b4196b8b5f257afd131398af927d005519",
+                "reference": "8dd903b4196b8b5f257afd131398af927d005519",
+                "shasum": ""
+            },
+            "require": {
+                "nojimage/twitter-text-php": "1.1.1",
+                "phergie/phergie-irc-bot-react": "dev-master",
+                "wyrihaximus/phergie-http": "~1.0"
+            },
+            "require-dev": {
+                "phake/phake": "1.0.*",
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Phergie\\Plugin\\Url\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Phergie plugin for Display URL information about links",
+            "keywords": [
+                "bot",
+                "irc",
+                "plugin",
+                "react"
+            ],
+            "time": "2014-07-27 19:28:38"
         }
     ],
     "packages-dev": [
@@ -958,7 +1372,9 @@
         "phergie/phergie-irc-plugin-react-pong": 20,
         "phergie/phergie-irc-plugin-react-commandhelp": 20,
         "phergie/phergie-irc-plugin-react-usermode": 20,
-        "phergie/phergie-irc-plugin-react-nickserv": 20
+        "phergie/phergie-irc-plugin-react-nickserv": 20,
+        "phergie/phergie-irc-plugin-react-youtube": 20,
+        "vlucas/phpdotenv": 20
     },
     "prefer-stable": false,
     "platform": [
