@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "afb1f374dd3eb218c85f692ea3ed1cf5",
+    "hash": "28b3382390152312e0d5d54e442bbf29",
     "packages": [
         {
             "name": "evenement/evenement",
@@ -592,6 +592,94 @@
                 "react"
             ],
             "time": "2014-07-09 03:24:41"
+        },
+        {
+            "name": "phergie/phergie-irc-plugin-react-eventfilter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phergie/phergie-irc-plugin-react-eventfilter.git",
+                "reference": "f579bc47f409a094867254deff29994168d1ce02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-plugin-react-eventfilter/zipball/f579bc47f409a094867254deff29994168d1ce02",
+                "reference": "f579bc47f409a094867254deff29994168d1ce02",
+                "shasum": ""
+            },
+            "require": {
+                "phergie/phergie-irc-bot-react": "dev-master"
+            },
+            "require-dev": {
+                "phake/phake": "2.0.0-beta2",
+                "phergie/phergie-irc-plugin-react-usermode": "dev-master",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "suggest": {
+                "phergie/phergie-irc-plugin-react-usermode": "supports filtering of events by channel modes of originating users"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phergie\\Irc\\Plugin\\React\\EventFilter\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Phergie plugin for limiting processing of incoming events based on event metadata",
+            "keywords": [
+                "bot",
+                "irc",
+                "plugin",
+                "react"
+            ],
+            "time": "2014-07-09 03:24:42"
+        },
+        {
+            "name": "phergie/phergie-irc-plugin-react-joinpart",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phergie/phergie-irc-plugin-react-joinpart.git",
+                "reference": "58230cee2bdcb1f12093a112867b2df9d8a54cff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-plugin-react-joinpart/zipball/58230cee2bdcb1f12093a112867b2df9d8a54cff",
+                "reference": "58230cee2bdcb1f12093a112867b2df9d8a54cff",
+                "shasum": ""
+            },
+            "require": {
+                "phergie/phergie-irc-bot-react": "dev-master",
+                "phergie/phergie-irc-plugin-react-command": "1.0.*"
+            },
+            "require-dev": {
+                "phake/phake": "2.0.0-beta2",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "suggest": {
+                "phergie/phergie-irc-plugin-react-commandhelp": "provides interactive help for commands"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phergie\\Irc\\Plugin\\React\\JoinPart\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "Phergie plugin for providing commands to instruct the bot to join and part channels",
+            "keywords": [
+                "bot",
+                "irc",
+                "plugin",
+                "react"
+            ],
+            "time": "2014-07-09 03:24:43"
         },
         {
             "name": "phergie/phergie-irc-plugin-react-nickserv",
@@ -1374,7 +1462,9 @@
         "phergie/phergie-irc-plugin-react-commandhelp": 20,
         "phergie/phergie-irc-plugin-react-usermode": 20,
         "phergie/phergie-irc-plugin-react-nickserv": 20,
-        "phergie/phergie-irc-plugin-react-youtube": 20
+        "phergie/phergie-irc-plugin-react-youtube": 20,
+        "phergie/phergie-irc-plugin-react-eventfilter": 20,
+        "phergie/phergie-irc-plugin-react-joinpart": 20
     },
     "prefer-stable": false,
     "platform": [

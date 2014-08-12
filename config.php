@@ -26,8 +26,15 @@ return [
     // runtime essentials
     new \Phergie\Irc\Plugin\React\Pong\Plugin,
     new \Phergie\Irc\Plugin\React\AutoJoin\Plugin(['channels' => getenv('IRC_CHANS')]),
-    new \Phergie\Irc\Plugin\React\Quit\Plugin(['message' => 'because %s said so']),
     new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS') ?: '']),
+
+    new \Phergie\Irc\Plugin\React\EventFilter\Plugin(array(
+      'filter' => new Phergie\Irc\Plugin\React\EventFilter\UserModeFilter($usermodePlugin, array('o')),
+      'plugins' => array(
+        new \Phergie\Irc\Plugin\React\JoinPart\Plugin,
+        new \Phergie\Irc\Plugin\React\Quit\Plugin(['message' => 'because %s said so']),
+      ),
+    )),
 
     // commands
     new \Phergie\Irc\Plugin\React\Command\Plugin(['prefix' => '.']),
