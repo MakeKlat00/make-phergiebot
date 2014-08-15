@@ -18,6 +18,7 @@
         "phergie/phergie-irc-plugin-react-nickserv": "dev-master",
         "phergie/phergie-irc-plugin-react-youtube": "dev-master",
         "phergie/phergie-irc-plugin-react-eventfilter": "dev-master",
-        "phergie/phergie-irc-plugin-react-joinpart": "dev-master"
+        "phergie/phergie-irc-plugin-react-joinpart": "dev-master",
+        "embedly/embedly-php": "dev-master"
     }
 }

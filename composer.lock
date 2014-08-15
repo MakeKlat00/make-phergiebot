@@ -4,8 +4,53 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28b3382390152312e0d5d54e442bbf29",
+    "hash": "e7c29897b22f0f4c17717a1684932a95",
     "packages": [
+        {
+            "name": "embedly/embedly-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/embedly/embedly-php.git",
+                "reference": "461886c6ffa90aadcde4fb216ff275969d96a7f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/embedly/embedly-php/zipball/461886c6ffa90aadcde4fb216ff275969d96a7f9",
+                "reference": "461886c6ffa90aadcde4fb216ff275969d96a7f9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "behat/behat": "2.4.*@stable",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Embedly": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bob Corsaro",
+                    "email": "rcorsaro@gmail.com",
+                    "homepage": "http://bit.ly/rcorsaro"
+                }
+            ],
+            "description": "Embedly library for PHP",
+            "homepage": "https://github.com/embedly",
+            "keywords": [
+                "embedly"
+            ],
+            "time": "2014-03-17 17:30:47"
+        },
         {
             "name": "evenement/evenement",
             "version": "1.0.x-dev",
@@ -274,12 +319,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-client-react.git",
-                "reference": "9fd43f6aa8130e05e8baecaba2efeeb80c0dc818"
+                "reference": "87b88b89d74c4a6065f57faaa4d6403d038ccf21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-client-react/zipball/9fd43f6aa8130e05e8baecaba2efeeb80c0dc818",
-                "reference": "9fd43f6aa8130e05e8baecaba2efeeb80c0dc818",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-client-react/zipball/87b88b89d74c4a6065f57faaa4d6403d038ccf21",
+                "reference": "87b88b89d74c4a6065f57faaa4d6403d038ccf21",
                 "shasum": ""
             },
             "require": {
@@ -318,7 +363,7 @@
                 "irc",
                 "react"
             ],
-            "time": "2014-07-30 02:21:20"
+            "time": "2014-08-14 01:46:37"
         },
         {
             "name": "phergie/phergie-irc-connection",
@@ -599,12 +644,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phergie/phergie-irc-plugin-react-eventfilter.git",
-                "reference": "f579bc47f409a094867254deff29994168d1ce02"
+                "reference": "b69a20d40c2714d0746baee834a22d8132e8df72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phergie/phergie-irc-plugin-react-eventfilter/zipball/f579bc47f409a094867254deff29994168d1ce02",
-                "reference": "f579bc47f409a094867254deff29994168d1ce02",
+                "url": "https://api.github.com/repos/phergie/phergie-irc-plugin-react-eventfilter/zipball/b69a20d40c2714d0746baee834a22d8132e8df72",
+                "reference": "b69a20d40c2714d0746baee834a22d8132e8df72",
                 "shasum": ""
             },
             "require": {
@@ -635,7 +680,7 @@
                 "plugin",
                 "react"
             ],
-            "time": "2014-07-09 03:24:42"
+            "time": "2014-08-13 03:25:22"
         },
         {
             "name": "phergie/phergie-irc-plugin-react-joinpart",
@@ -1411,17 +1456,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/PhergieUrl.git",
-                "reference": "8dd903b4196b8b5f257afd131398af927d005519"
+                "reference": "fcf3d5a9cb44b204553de464395ec42cb3041c47"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/PhergieUrl/zipball/8dd903b4196b8b5f257afd131398af927d005519",
-                "reference": "8dd903b4196b8b5f257afd131398af927d005519",
+                "url": "https://api.github.com/repos/WyriHaximus/PhergieUrl/zipball/fcf3d5a9cb44b204553de464395ec42cb3041c47",
+                "reference": "fcf3d5a9cb44b204553de464395ec42cb3041c47",
                 "shasum": ""
             },
             "require": {
                 "nojimage/twitter-text-php": "1.1.1",
                 "phergie/phergie-irc-bot-react": "dev-master",
+                "react/promise": "~1.0|~2.0",
                 "wyrihaximus/phergie-http": "~1.0"
             },
             "require-dev": {
@@ -1445,7 +1491,7 @@
                 "plugin",
                 "react"
             ],
-            "time": "2014-07-27 19:28:38"
+            "time": "2014-08-14 17:41:15"
         }
     ],
     "packages-dev": [
@@ -1464,7 +1510,8 @@
         "phergie/phergie-irc-plugin-react-nickserv": 20,
         "phergie/phergie-irc-plugin-react-youtube": 20,
         "phergie/phergie-irc-plugin-react-eventfilter": 20,
-        "phergie/phergie-irc-plugin-react-joinpart": 20
+        "phergie/phergie-irc-plugin-react-joinpart": 20,
+        "embedly/embedly-php": 20
     },
     "prefer-stable": false,
     "platform": [
