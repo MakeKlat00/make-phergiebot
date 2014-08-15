@@ -3,9 +3,18 @@
 use Phergie\Irc\Plugin\React\Command\CommandEvent;
 use Phergie\Irc\Bot\React\EventQueueInterface;
 use Phergie\Irc\Bot\React\PluginInterface;
+use Phergie\Irc\Client\React\LoopAwareInterface;
+use React\EventLoop\LoopInterface;
 
-class Plugin implements PluginInterface
+class Plugin implements PluginInterface, LoopAwareInterface
 {
+
+  protected $loop;
+
+  public function setLoop(LoopInterface $loop)
+  {
+    $this->loop = $loop;
+  }
 
   public function getSubscribedEvents()
   {
@@ -28,8 +37,10 @@ class Plugin implements PluginInterface
 
     if ((rand() % 6) == 0) {
       $queue->ircNotice($source, "*PAN*");
-      $queue->ircNotice($nick, "*PAN*");
-      $queue->ircKick($source, $nick, "Pan t'es mort !");
+      $this->loop->addTimer(1, function() use ($source, $nick, $queue)
+      {
+        $queue->ircKick($source, $nick, "Pan t'es mort !");
+      });
     } else {
       $queue->ircNotice($source, "*CLICK*");
     }
