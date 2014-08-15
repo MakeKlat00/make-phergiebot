@@ -28,6 +28,7 @@ class Plugin implements PluginInterface
 
     if ((rand() % 6) == 0) {
       $queue->ircNotice($source, "*PAN*");
+      $queue->ircNotice($nick, "*PAN*");
       $queue->ircKick($source, $nick, "Pan t'es mort !");
     } else {
       $queue->ircNotice($source, "*CLICK*");
