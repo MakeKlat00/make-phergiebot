@@ -68,6 +68,7 @@ return [
     ]),
     new \Phergie\Irc\Plugin\React\YouTube\Plugin(array('key' => getenv('GOOGLE_APIKEY') ?: '')),
     new \Plugins\Twitter\Plugin,
+    new \Plugins\KickJoin\Plugin,
   ], $commandPlugins),
 
   'connections' => [
