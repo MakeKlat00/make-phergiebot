@@ -1456,12 +1456,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/PhergieUrl.git",
-                "reference": "fcf3d5a9cb44b204553de464395ec42cb3041c47"
+                "reference": "cada9a5e31f48b4a922df3f8f98a1e729352bca4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/PhergieUrl/zipball/fcf3d5a9cb44b204553de464395ec42cb3041c47",
-                "reference": "fcf3d5a9cb44b204553de464395ec42cb3041c47",
+                "url": "https://api.github.com/repos/WyriHaximus/PhergieUrl/zipball/cada9a5e31f48b4a922df3f8f98a1e729352bca4",
+                "reference": "cada9a5e31f48b4a922df3f8f98a1e729352bca4",
                 "shasum": ""
             },
             "require": {
@@ -1491,7 +1491,7 @@
                 "plugin",
                 "react"
             ],
-            "time": "2014-08-14 17:41:15"
+            "time": "2014-08-15 19:02:38"
         }
     ],
     "packages-dev": [
