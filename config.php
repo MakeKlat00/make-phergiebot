@@ -1,18 +1,29 @@
 <?php
 
 use Phergie\Irc\Connection;
+use Phergie\Irc\Plugin\React\EventFilter\Plugin as EventFilterPlugin;
+use Phergie\Irc\Plugin\React\EventFilter as Filters;
 
 Dotenv::load(__DIR__);
 Dotenv::required(['IRC_CHANS', 'IRC_HOST', 'IRC_NAME', 'IRC_NICK', 'IRC_IDENT']);
 
+$client = new \Phergie\Irc\Client\React\Client();
+$client->on('connect.end', function(\Phergie\Irc\ConnectionInterface $connection, \Psr\Log\LoggerInterface $logger) use ($client) {
+    $logger->debug('Connection to ' . $connection->getServerHostname() . ' lost, attempting to reconnect');
+    $client->addConnection($connection);
+});
+
 $usermodePlugin = new \Phergie\Irc\Plugin\React\UserMode\Plugin;
 
-$plugins = [
+$commandPlugins = [
   new \Plugins\Foo\Plugin(['usermode' => $usermodePlugin]),
   new \Plugins\Games\Plugin(),
 ];
 
 return [
+
+  // Client override
+  'client' => $client,
 
   // Plugins to include for all connections
 
@@ -26,9 +37,9 @@ return [
     // runtime essentials
     new \Phergie\Irc\Plugin\React\Pong\Plugin,
     new \Phergie\Irc\Plugin\React\AutoJoin\Plugin(['channels' => getenv('IRC_CHANS')]),
-    new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS') ?: '']),
+    new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS') ?: 'foobar']),
 
-    new \Phergie\Irc\Plugin\React\EventFilter\Plugin(array(
+    new EventFilterPlugin(array(
       'filter' => new Phergie\Irc\Plugin\React\EventFilter\UserModeFilter($usermodePlugin, array('o')),
       'plugins' => array(
         new \Phergie\Irc\Plugin\React\JoinPart\Plugin,
@@ -36,13 +47,28 @@ return [
       ),
     )),
 
+    // new EventFilterPlugin(array(
+    //   'filter' => new Filters\AndFilter(array(
+    //     new Filters\NotFilter(
+    //       new Filters\UserFilter(array('Hades!*@*'))
+    //     ),
+    //     new Filters\NotFilter(
+    //       new Filters\UserFilter(array('*bot!*@*'))
+    //     ),
+    //   )),
+    //   'plugins' => array(
+    //     new \Plugins\Twitter\Plugin,
+    //   ),
+    // )),
+
     // commands
     new \Phergie\Irc\Plugin\React\Command\Plugin(['prefix' => '.']),
     new \Phergie\Irc\Plugin\React\CommandHelp\Plugin([
-      'plugins'  => $plugins,
+      'plugins'  => $commandPlugins,
     ]),
     new \Phergie\Irc\Plugin\React\YouTube\Plugin(array('key' => getenv('GOOGLE_APIKEY') ?: '')),
-  ], $plugins),
+    new \Plugins\Twitter\Plugin,
+  ], $commandPlugins),
 
   'connections' => [
 
