@@ -27,10 +27,10 @@ class Plugin implements PluginInterface
     }
 
     if ((rand() % 6) == 0) {
-      $queue->ircPrivmsg($source, "Pan t'es mort !");
+      $queue->ircNotice($source, "*PAN*");
       $queue->ircKick($source, $nick, "Pan t'es mort !");
     } else {
-      $queue->ircPrivmsg($source, "Tu vis, au suivant !");
+      $queue->ircNotice($source, "*CLICK*");
     }
 
   }
