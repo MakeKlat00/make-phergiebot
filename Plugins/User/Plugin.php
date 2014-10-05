@@ -1,4 +1,4 @@
-<?php namespace Plugins\Foo;
+<?php namespace Plugins\User;
 
 use Phergie\Irc\Plugin\React\Command\CommandEvent;
 use Phergie\Irc\Event\UserEvent;
@@ -30,13 +30,13 @@ class Plugin extends AbstractPlugin
   public function getSubscribedEvents()
   {
     return array(
-      'command.foo' => 'handleFooCommand',
-      'command.foo.help' => 'handleFooHelp',
+      'command.register' => 'handleRegisterCommand',
+      'command.register.help' => 'handleRegisterHelp',
       'irc.received.notice' => 'handleNotice',
     );
   }
 
-  public function handleFooCommand(CommandEvent $event, EventQueueInterface $queue)
+  public function handleRegisterCommand(CommandEvent $event, EventQueueInterface $queue)
   {
     $connection = $event->getConnection();
     $nick = $event->getNick();
@@ -51,13 +51,6 @@ class Plugin extends AbstractPlugin
     }
 
     $queue->ircPrivmsg('NickServ', "ACC $nick *");
-    // Don't process the command if the user is not a channel operator
-    // if (!$this->userMode->userHasMode($connection, $source, $nick, 'o')) {
-    //   return;
-    // }
-
-    // The user is a channel operator, continue processing the command
-    // ...
   }
 
   public function handleNotice(UserEvent $event, EventQueueInterface $queue)
@@ -66,14 +59,14 @@ class Plugin extends AbstractPlugin
     $text = $event->getParams()['text'];
     preg_match("/(?<nick>.*) -> (?<account>.*) ACC (?<status>\d)/ui", $text, $matches);
     $msg = "{$matches['nick']} ({$matches['account']}) has NickServ status '" . $this->status[$matches['status']] . "'";
-    $this->getLogger()->debug($matches);
+    $this->getLogger()->debug($msg);
     $queue->ircPrivmsg('#devbot', $msg);
   }
 
-  public function handleFooHelp(CommandEvent $event, EventQueueInterface $queue)
+  public function handleRegisterHelp(CommandEvent $event, EventQueueInterface $queue)
   {
     $channel = $event->getSource();
-    $message = '.foo: get ACC status';
+    $message = '.register: register yourself with the bot (checks with NickServ to prevent id-theft)';
     $queue->ircPrivmsg($channel, $message);
   }
 }

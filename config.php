@@ -16,7 +16,7 @@ $client->on('connect.end', function(\Phergie\Irc\ConnectionInterface $connection
 $usermodePlugin = new \Phergie\Irc\Plugin\React\UserMode\Plugin;
 
 $commandPlugins = [
-  new \Plugins\Foo\Plugin(['usermode' => $usermodePlugin]),
+  new \Plugins\User\Plugin(['userMode' => $usermodePlugin]),
   new \Plugins\Games\Plugin(),
 ];
 
