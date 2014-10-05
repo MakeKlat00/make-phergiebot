@@ -3,6 +3,7 @@
 use Phergie\Irc\Connection;
 use Phergie\Irc\Plugin\React\EventFilter\Plugin as EventFilterPlugin;
 use Phergie\Irc\Plugin\React\EventFilter as Filters;
+use WyriHaximus\Phergie\Plugin\Url\Mime;
 
 Dotenv::load(__DIR__);
 Dotenv::required(['IRC_CHANS', 'IRC_HOST', 'IRC_NAME', 'IRC_NICK', 'IRC_IDENT']);
@@ -31,7 +32,18 @@ return [
     // dependencies
     new \WyriHaximus\Phergie\Plugin\Dns\Plugin,
     new \WyriHaximus\Phergie\Plugin\Http\Plugin,
-    new \WyriHaximus\Phergie\Plugin\Url\Plugin,
+    new \WyriHaximus\Phergie\Plugin\Url\Plugin([
+      'handler' => new \Plugins\Url\MimeAwareUrlHandler(
+        '%image-mime% %image-width%×%image-height%',
+        [new Mime\Image]
+      ),
+    ]),
+    new \WyriHaximus\Phergie\Plugin\Url\Plugin([
+      'handler' => new \Plugins\Url\MimeAwareUrlHandler(
+        '%title%',
+        [new Mime\Html]
+      ),
+    ]),
     $usermodePlugin,
 
     // runtime essentials
