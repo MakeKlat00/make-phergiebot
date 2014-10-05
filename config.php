@@ -52,7 +52,7 @@ return [
     new \Phergie\Irc\Plugin\React\NickServ\Plugin(['password' => getenv('NICKSERV_PASS') ?: 'foobar']),
 
     new EventFilterPlugin(array(
-      'filter' => new Phergie\Irc\Plugin\React\EventFilter\UserModeFilter($usermodePlugin, array('o')),
+      'filter' => new Phergie\Irc\Plugin\React\EventFilter\UserModeFilter($usermodePlugin, array('q', 'a', 'o')),
       'plugins' => array(
         new \Phergie\Irc\Plugin\React\JoinPart\Plugin,
         new \Phergie\Irc\Plugin\React\Quit\Plugin(['message' => 'because %s said so']),
