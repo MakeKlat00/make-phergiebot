@@ -17,8 +17,8 @@ $client->on('connect.end', function(\Phergie\Irc\ConnectionInterface $connection
 $usermodePlugin = new \Phergie\Irc\Plugin\React\UserMode\Plugin;
 
 $commandPlugins = [
-  new \Plugins\User\Plugin(['userMode' => $usermodePlugin]),
-  new \Plugins\Games\Plugin(),
+  new Plugins\User\Plugin(['userMode' => $usermodePlugin]),
+  new Plugins\Games\Plugin(),
 ];
 
 return [
@@ -32,12 +32,6 @@ return [
     // dependencies
     new \WyriHaximus\Phergie\Plugin\Dns\Plugin,
     new \WyriHaximus\Phergie\Plugin\Http\Plugin,
-    new \WyriHaximus\Phergie\Plugin\Url\Plugin([
-      'handler' => new \Plugins\Url\MimeAwareUrlHandler(
-        '%image-mime% %image-width%×%image-height%',
-        [new Mime\Image]
-      ),
-    ]),
     new \WyriHaximus\Phergie\Plugin\Url\Plugin([
       'handler' => new \Plugins\Url\MimeAwareUrlHandler(
         '%title%',
@@ -59,51 +53,23 @@ return [
       ),
     )),
 
-    // new EventFilterPlugin(array(
-    //   'filter' => new Filters\AndFilter(array(
-    //     new Filters\NotFilter(
-    //       new Filters\UserFilter(array('Hades!*@*'))
-    //     ),
-    //     new Filters\NotFilter(
-    //       new Filters\UserFilter(array('*bot!*@*'))
-    //     ),
-    //   )),
-    //   'plugins' => array(
-    //     new \Plugins\Twitter\Plugin,
-    //   ),
-    // )),
-
     // commands
     new \Phergie\Irc\Plugin\React\Command\Plugin(['prefix' => '.']),
     new \Phergie\Irc\Plugin\React\CommandHelp\Plugin([
       'plugins'  => $commandPlugins,
     ]),
     new \Phergie\Irc\Plugin\React\YouTube\Plugin(array('key' => getenv('GOOGLE_APIKEY') ?: '')),
-    new \Plugins\Twitter\Plugin,
-    new \Plugins\KickJoin\Plugin,
+    new Plugins\Twitter\Plugin,
+    new Plugins\KickJoin\Plugin,
   ], $commandPlugins),
 
   'connections' => [
 
     new Connection([
-
-      // Required settings
-
       'serverHostname' => getenv('IRC_HOST'),
       'username' => getenv('IRC_NAME'),
       'realname' => getenv('IRC_NICK'),
       'nickname' => getenv('IRC_IDENT'),
-
-      // Optional settings
-
-      // 'hostname' => 'user server name goes here if needed',
-      // 'serverport' => 6697,
-      // 'password' => 'password goes here if needed',
-      // 'options' => [
-      //   'transport' => 'ssl',
-      //   'force-ipv4' => true,
-      // ]
-
     ]),
 
   ]
