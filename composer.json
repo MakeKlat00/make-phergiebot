@@ -7,20 +7,20 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "vlucas/phpdotenv": "dev-master",
-        "react/stream": "v0.4.2",
-        "react/http-client": "v0.4.0 as v0.3.1",
-        "react/dns": "v0.4.1 as v0.3.2",
-        "wyrihaximus/phergie-http": "dev-master as 1.0.0",
-        "phergie/phergie-irc-client-react": "dev-master",
+        "react/stream": "^0.4.1",
+        "react/http-client": "^0.4.1",
+        "react/dns": "^0.4.1",
+        "wyrihaximus/phergie-http": "~2.0",
+        "phergie/phergie-irc-client-react": "~2.2",
         "phergie/phergie-irc-plugin-react-pong": "dev-master",
         "phergie/phergie-irc-plugin-react-autojoin": "dev-master",
         "phergie/phergie-irc-plugin-react-commandhelp": "dev-master",
-        "phergie/phergie-irc-plugin-react-usermode": "dev-master",
+        "makeklat00/phergie-irc-plugin-react-chanmodes": "dev-master",
         "phergie/phergie-irc-plugin-react-quit": "dev-master",
         "phergie/phergie-irc-plugin-react-nickserv": "dev-master",
         "phergie/phergie-irc-plugin-react-youtube": "dev-master",
         "phergie/phergie-irc-plugin-react-eventfilter": "dev-master",
-        "phergie/phergie-irc-plugin-react-joinpart": "dev-master"
+        "phergie/phergie-irc-plugin-react-joinpart": "dev-master",
+        "josegonzalez/dotenv": "dev-master"
     }
 }

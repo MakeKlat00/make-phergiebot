@@ -34,24 +34,16 @@ class MimeAwareUrlHandler implements UrlHandlerInterface
     /**
      * Accepts format pattern.
      *
-     * @param string $pattern
+     * @param array $mimes
      */
-    public function __construct($pattern = null, array $mimes = null)
+    public function __construct(array $mimes = null)
     {
-        $this->pattern = $pattern ? $pattern : static::DEFAULT_PATTERN;
-
-        if ($mimes === null) {
-            $this->mimes = array(
-                new Mime\Html(),
-            );
-        } else {
-            $this->mimes = $mimes;
+        foreach ($mimes as $mime) {
+            $mime['pattern'] = !empty($mime['pattern']) ? $mime['pattern'] : static::DEFAULT_PATTERN;
+            $mime['mimes'] = !empty($mime['mimes']) ? $mime['mimes'] : [new Mime\Html];
         }
-    }
 
-    public function getPattern()
-    {
-        return $this->pattern;
+        $this->mimes = $mimes;
     }
 
     public function handle(UrlInterface $url)
@@ -61,8 +53,11 @@ class MimeAwareUrlHandler implements UrlHandlerInterface
         if ($url->getCode() == static::HTTP_STATUS_OK) {
             if (isset($headers['content-type'][0])) {
                 foreach ($this->mimes as $mime) {
-                    if ($mime->matches($headers['content-type'][0])) {
-                        $matches++;
+                    foreach ($mime['mimes'] as $mimeToCheck) {
+                        if ($mimeToCheck->matches($headers['content-type'][0])) {
+                            $pattern = $mime['pattern'];
+                            $matches++;
+                        }
                     }
                 }
             }
@@ -75,7 +70,7 @@ class MimeAwareUrlHandler implements UrlHandlerInterface
         $formatted = str_replace(
             array_keys($replacements),
             array_values($replacements),
-            $this->pattern
+            $pattern
         );
 
         return $formatted;
@@ -123,8 +118,10 @@ class MimeAwareUrlHandler implements UrlHandlerInterface
         if ($url->getCode() == static::HTTP_STATUS_OK) {
             if (isset($headers['content-type'][0])) {
                 foreach ($this->mimes as $mime) {
-                    if ($mime->matches($headers['content-type'][0])) {
-                        $replacements = $mime->extract($replacements, $url);
+                    foreach ($mime['mimes'] as $mimeToCheck) {
+                        if ($mimeToCheck->matches($headers['content-type'][0])) {
+                            $replacements = $mimeToCheck->extract($replacements, $url);
+                        }
                     }
                 }
             }
