@@ -10,6 +10,8 @@ class Plugin extends AbstractPlugin
 
   const ERR_INVALID_RESPONSEFORMAT = 1;
 
+  private $apiKey;
+
   /**
      * Accepts plugin configuration.
      *
@@ -22,7 +24,10 @@ class Plugin extends AbstractPlugin
      */
   public function __construct(array $config = array())
   {
-    \Dotenv::required(['EMBEDLY_APIKEY']);
+    if (empty($config['key'])) {
+      throw new \InvalidArgumentException('key is required');
+    }
+    $this->apiKey = $config['key'];
     $this->responseFormat = $this->getResponseFormat($config);
   }
 
@@ -61,7 +66,7 @@ class Plugin extends AbstractPlugin
     return 'http://api.embed.ly/1/oembed?' . http_build_query(array(
       'url' => $url,
       'maxwidth' => 500,
-      'key' => getenv('EMBEDLY_APIKEY'),
+      'key' => $this->apiKey,
     ));
   }
 

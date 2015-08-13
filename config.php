@@ -7,7 +7,7 @@ use WyriHaximus\Phergie\Plugin\Url\Mime;
 
 (new josegonzalez\Dotenv\Loader(__DIR__ . '/.env'))
     ->parse()
-    ->expect('IRC_CHANS', 'IRC_HOST', 'IRC_NAME', 'IRC_NICK', 'IRC_IDENT')
+    ->expect('IRC_CHANS', 'IRC_HOST', 'IRC_NAME', 'IRC_NICK', 'IRC_IDENT', 'EMBEDLY_APIKEY')
     ->putenv();
 
 $client = new \Phergie\Irc\Client\React\Client();
@@ -81,7 +81,7 @@ return [
 
         // Url handlers
         new \Phergie\Irc\Plugin\React\YouTube\Plugin(array('key' => getenv('GOOGLE_APIKEY') ?: '')),
-        new \Plugins\Twitter\Plugin,
+        new \Plugins\Twitter\Plugin(['key' => getenv('EMBEDLY_APIKEY')]),
 
         // commands
         new \Phergie\Irc\Plugin\React\Command\Plugin(['prefix' => '.']),
